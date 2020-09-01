@@ -50,6 +50,8 @@ For each target query to predict, the model will use the entire training set exc
  * **bh** : Hyperparameter of the model
  * **ah** : List of values for the hyperparameter
 
+If you want to explore the mistakes the model does, you can use [this notebook](https://github.com/hansglick/adth-tt/blob/master/Exploring_mistakes.ipynb)
+
 ***
 
 #### **Prediction**
