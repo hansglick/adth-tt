@@ -1,7 +1,7 @@
 # Overview
 
 #### **Goal and model** 
-The objective is to correctly predict the category to which a query belongs. A query is a sequence of words. The training set contains about 70,000 words. Queries can belong to one of 1500 possible categories. In view of the sparsity of the data and the high number of classes, a KNN type model was chosen. **An accuracy higher than 58% was obtained**. For more details about the model, **please go there**
+The objective is to correctly predict the category to which a query belongs. A query is a sequence of words. The training set contains about 70,000 words. Queries can belong to one of 1500 possible categories. In view of the sparsity of the data and the high number of classes, a KNN type model was chosen. **An accuracy higher than 58% was obtained**. For more details about the model, **PLEASE GO THERE**
 
 
 ***
@@ -30,18 +30,18 @@ It is not strictly speaking about training since it is a KNN type model. However
 
 This command will download and build the following files : 
 
- * trainingSet.csv , *training dataset*)
- * testset.txt , *test dataset*
- * WordToRequest.p , *a pickle file that contains a dictionnary used by the model*
- * dic_of_words.p , *a pickle file that contains a dictionnary used by the model*
- * dic_of_requests.p , *a pickle file that contains a dictionnary used by the model*
- * df.p , *a pickle file that contains a pandas dataframe used by the model*
+ * *trainingSet.csv* , training dataset
+ * *testset.txt* , test dataset
+ * *WordToRequest.p* , a pickle file that contains a dictionnary used by the model
+ * *dic_of_words.p* , a pickle file that contains a dictionnary used by the model
+ * *dic_of_requests.p* , a pickle file that contains a dictionnary used by the model
+ * *df.p* , a pickle file that contains a pandas dataframe used by the model
 
 ***
 
 #### **Evaluation**
 
-For each target query to predict, the model will use the entire training set except the target query. In short, in order to predict the category of a target query, the model looks for the closest candidate queries in the training set. Then, it votes these candidates. The category with the most votes becomes the prediction. In order to evaluate the model, the accuracy was chosen. To start the evaluation of the model, use the following command. It will also write a file that contains the accuracy for each category and each tested hyperparameter value. Again, to get more details about the model, **please go there**
+For each target query to predict, the model will use the entire training set except the target query. In short, in order to predict the category of a target query, the model looks for the closest candidate queries in the training set. Then, it votes these candidates. The category with the most votes becomes the prediction. In order to evaluate the model, the accuracy was chosen. To start the evaluation of the model, use the following command. It will also write a file that contains the accuracy for each category and each tested hyperparameter value. Again, to get more details about the model, **PLEASE GO THERE**
 
 ```
 (adthena) python evaluate.py -n 10000 -bh 0.65 -ah 0.65 0.75 0.85 0.95
