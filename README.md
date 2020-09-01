@@ -57,9 +57,9 @@ For each target query to predict, the model will use the entire training set exc
 In order to use the model to predict the categories of queries contained in a text file, run the following command : 
 
 ```
-(adthena) python predict.py -i testexample.txt -o results.txt -hyper 0.95
+(adthena) python predict.py -i testset.txt -o predictions.txt -hyper 0.95
 ```
- * **i** : Name of the input file, The file that contains the requests for which we want to predict the category
+ * **i** : Name of the input file, the file that contains the queries for which we want to predict the category
  * **o** : Name of the output file, it will contains the input queries and the predicted categories
  * **hyper** : Value of the hyperparameter, please use 0.95 since it gives good performance
 
