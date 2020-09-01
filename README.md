@@ -1,10 +1,8 @@
 # Overview
 
-#### **Goal** 
-The objective is to correctly predict the category to which a query belongs. A query is a sequence of words. The training set contains about 70,000 words. Queries can belong to one of 1500 possible categories.
+#### **Goal and model** 
+The objective is to correctly predict the category to which a query belongs. A query is a sequence of words. The training set contains about 70,000 words. Queries can belong to one of 1500 possible categories. In view of the sparsity of the data and the high number of classes, a KNN type model was chosen. **An accuracy higher than 58% was obtained**. For more details about the model, **please go there**
 
-#### **The model**
-In view of the sparsity of the data and the high number of classes, a KNN type model was chosen. **An accuracy higher than 58% was obtained**. For more details about the model, **please go there**
 
 ***
 
@@ -51,6 +49,8 @@ For each target query to predict, the model will use the entire training set exc
  * **n** : Number of observations in the training set to use to evaluate the model. Although in theory the evaluation should be run over the entire training set, keep in mind that a prediction can take time
  * **bh** : Hyperparameter of the model
  * **ah** : List of values for the hyperparameter
+
+***
 
 #### **Prediction**
 
