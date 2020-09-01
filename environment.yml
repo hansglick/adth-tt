@@ -1,0 +1,41 @@
+name: adthena
+channels:
+  - anaconda
+  - conda-forge
+  - defaults
+dependencies:
+  - _libgcc_mutex=0.1=conda_forge
+  - _openmp_mutex=4.5=1_gnu
+  - blas=1.0=mkl
+  - bzip2=1.0.8=h516909a_3
+  - ca-certificates=2020.7.22=0
+  - certifi=2020.6.20=py37_0
+  - intel-openmp=2020.2=254
+  - ld_impl_linux-64=2.34=hc38a660_9
+  - libffi=3.2.1=he1b5a44_1007
+  - libgcc-ng=9.3.0=h24d8f2e_16
+  - libgomp=9.3.0=h24d8f2e_16
+  - libstdcxx-ng=9.3.0=hdf63c60_16
+  - mkl=2019.4=243
+  - mkl-service=2.3.0=py37he904b0f_0
+  - mkl_fft=1.1.0=py37h23d657b_0
+  - mkl_random=1.1.0=py37hd6b4f25_0
+  - ncurses=6.2=he1b5a44_1
+  - numpy=1.19.1=py37hbc911f0_0
+  - numpy-base=1.19.1=py37hfa32c7d_0
+  - openssl=1.1.1g=h7b6447c_0
+  - pandas=1.1.1=py37he6710b0_0
+  - pip=20.2.2=py_0
+  - python=3.7.3=h357f687_2
+  - python-dateutil=2.8.1=py_0
+  - python_abi=3.7=1_cp37m
+  - pytz=2020.1=py_0
+  - readline=8.0=he28a2e2_2
+  - setuptools=49.6.0=py37hc8dfbb8_0
+  - six=1.15.0=py_0
+  - sqlite=3.33.0=h4cf870e_0
+  - tk=8.6.10=hed695b0_0
+  - wheel=0.35.1=pyh9f0ad1d_0
+  - xz=5.2.5=h516909a_1
+  - zlib=1.2.11=h516909a_1009
+
