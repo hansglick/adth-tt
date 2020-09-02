@@ -13,7 +13,7 @@ The objective is to correctly predict the category to which a query belongs. A q
 # Application
 
 
-#### **Clone the repository and set the environment**
+### **Clone the repository and set the environment**
 Tou should replicate the environment under which the application was developed. To do this, please use conda. With the following commands, you will clone and activate the needed environment :
 
 ```
@@ -24,7 +24,7 @@ conda activate adthena
 
 ***
 
-#### **Training**
+### **Training**
 
 It is not strictly speaking about training since it is a KNN type model. However, the model requires several statistics saved in dictionaries. The commands below allow to download the data and to build these statistics. However, be aware that this operation can take time. Moreover, it is not necessary to do it, the repository already contains already the needed files.
 
@@ -43,7 +43,7 @@ This command will download and build the following files :
 
 ***
 
-#### **Evaluation**
+### **Evaluation**
 
 For each target query to predict, the model will use the entire training set except the target query. In short, in order to predict the category of a target query, the model looks for the closest candidate queries in the training set. Then, it votes these candidates. The category with the most votes becomes the prediction. In order to evaluate the model, the accuracy was chosen. To start the evaluation of the model, use the following command. It will also write a file that contains the accuracy for each category and each tested hyperparameter value. Again, to get more details about the model, **PLEASE GO THERE**
 
@@ -58,7 +58,7 @@ If you want to explore the mistakes the model does, you can use [this notebook](
 
 ***
 
-#### **Prediction**
+### **Prediction**
 
 In order to use the model to predict the categories of queries contained in a text file, run the following command : 
 
