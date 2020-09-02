@@ -4,12 +4,12 @@
 The objective is to correctly predict the category to which a query belongs. A query is a sequence of words. The training set contains about 70,000 words. Queries can belong to one of 1500 possible categories. In view of the sparsity of the data and the high number of classes, a KNN type model was chosen. **An accuracy higher than 58% was obtained**
 
  * For more details about the model I use, [go there](https://github.com/hansglick/adth-tt/blob/master/docs/Model_details.pdf)
- * For the answers to the specific answers you ask, [go there](https://github.com/hansglick/adth-tt/blob/master/docs/answers.md)
+ * For the answers to the specific questions you ask, [go there](https://github.com/hansglick/adth-tt/blob/master/docs/answers.md)
  * The following will give you instructions for using the model
 
 #### **Important files** 
 
-Important files of the repository :
+
  * [my_predictions_for_testset.txt](https://github.com/hansglick/adth-tt/blob/master/my_predictions_for_testset.txt) : the predictions I got running my model on the *testset.txt* dataset
  * [myfun.py](https://github.com/hansglick/adth-tt/blob/master/myfun.py) : the functions I used for my model
  * [train.py](https://github.com/hansglick/adth-tt/blob/master/train.py) : the script to run the training part of the model
