@@ -34,7 +34,7 @@ conda activate adthena
 
 ### **Training**
 
-It is not strictly speaking about training since it is a KNN type model. However, the model requires several statistics saved in dictionaries. The commands below allow to download the data and to build these statistics. However, be aware that this operation can take time. Moreover, it is not necessary to do it, the repository already contains already the needed files.
+It is not strictly speaking about training since it is a KNN type model. However, the model requires several statistics saved in dictionaries. The commands below allow to download the data and to build these statistics. However, be aware that this operation can take time. **PLEASE NOTE THAT IT IS NOT NECESSARY TO RUN IT**, the repository already contains the needed files.
 
 ```
 (adthena) python training.py
@@ -53,14 +53,14 @@ This command will download and build the following files :
 
 ### **Evaluation**
 
-For each target query to predict, the model will use the entire training set except the target query. In short, in order to predict the category of a target query, the model looks for the closest candidate queries in the training set. Then, it votes these candidates. The category with the most votes becomes the prediction. In order to evaluate the model, the accuracy was chosen. To start the evaluation of the model, use the following command. It will also write a file that contains the accuracy for each category and each tested hyperparameter value. Again, to get more details about the model, **PLEASE GO THERE**
+For each target query to predict, the model will use the entire training set except the target query. In short, in order to predict the category of a target query, the model looks for the closest candidate queries in the training set. Then, it votes these candidates. The category with the most votes becomes the prediction. In order to evaluate the model, the accuracy was chosen. To start the evaluation of the model, use the following command. It will also write a file that contains the accuracy for each category and each tested hyperparameter value. Again, to get more details about the model, please [go there](https://github.com/hansglick/adth-tt/blob/master/docs/Model_details.pdf)
 
 ```
 (adthena) python evaluate.py -n 10000 -bh 0.65 -ah 0.65 0.75 0.85 0.95
 ```
  * **n** : Number of observations in the training set to use to evaluate the model. Although in theory the evaluation should be run over the entire training set, keep in mind that a prediction can take time
- * **bh** : Hyperparameter of the model
- * **ah** : List of values for the hyperparameter
+ * **bh** : Hyperparameter of the model needed to set the quality of the retrieved nearest queries
+ * **ah** : List of hyperparameter values to try when evaluating the model. The values should be greater or equal to the bh value 
 
 If you want to explore the mistakes the model does, you can use [this notebook](https://github.com/hansglick/adth-tt/blob/master/Exploring_mistakes.ipynb)
 
@@ -68,7 +68,7 @@ If you want to explore the mistakes the model does, you can use [this notebook](
 
 ### **Prediction**
 
-In order to use the model to predict the categories of queries contained in a text file, run the following command : 
+Tou can predict the categories of queries contained in a text file, run the following command : 
 
 ```
 (adthena) python predict.py -i testset.txt -o predictions.txt -hyper 0.95
