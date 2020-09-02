@@ -1,10 +1,10 @@
-### Question 1) Selected  model
+### Question 1, Selected  model
 
 Dealing with very sparse data and asymmetric distributions of the features we chose a more naïve model than the parametric classical ones. We opted for a version of KNN. We first computed the discriminant powers of all the words in the vocabulary. Discriminant power of a word is a measure supposed to define the importance of a word when it comes to predict the category. Then we say that the similarity used to find the nearest queries neighbors between two queries is the sum of the discriminant powers of the words shared by the two queries. Finally, we use a specific strategy to reduce the cost of searching the nearest neighbors of a query target. Once the neighboring queries are retrieved, the weighted distribution of the category variable among them is computed. The mode of the distribution is chosen as the prediction. [More details about the algorithm we developped](https://github.com/hansglick/adth-tt/blob/master/docs/Model_details.pdf)
 
 ***
 
-### Question 2) Pre-processing steps
+### Question 2, Pre-processing steps
 
 Almost no pre-processing was done except making sure that :
  * Every character was in lower case
@@ -12,7 +12,7 @@ Almost no pre-processing was done except making sure that :
 
 ***
 
-### Question 3) Evaluation of the performance
+### Question 3, Evaluation of the performance
 
 Given the large number of classes we faced (~ 1400), it seemed wise to us to choose accuracy as the measure of performance of the model. We need to set the quality of neighboring queries we want to make the prediction. This quality is represented by the unique hyperparameter of the model. It turned out that h=0.95 give the best results. The strategy to evaluate the model is pretty simple. For each query target :
  * We correct the dictionnary that contains the discriminant powers of the words (because it was build on the entire training set)
@@ -22,7 +22,7 @@ Given the large number of classes we faced (~ 1400), it seemed wise to us to cho
 
 ***
 
-### Question 4) Runtime complexity
+### Question 4, Runtime complexity
 
 #### Training
 
@@ -55,14 +55,14 @@ for a query target. We went from 0.25s (naïve approach) to 0.005s (best queries
 
 
 
-### Question 5) Model weaknesses
+### Question 5, Model weaknesses
 
 
 The obvious weaknesses of the model are the following :
 
  1. The algorithm considers the query as a bag of words, which might not be too bad since the queries are somewhat short. However we can imagine that the query 'boston globe' would be misclassified since the words 'boston' and 'globe' would be associated with other categories than newspaper. One of the solution would be to see a query as a bag of words **AND** a bag of bigrams.
  2. The algorithm considers every pair of non unique words as two different words. That might cause some problems especially in the following cases :
-   * When entities do not have permanent orthography. Which is generally the case for foreign words used to represent people or places. To deal with this problem, we can imagine a way to reconcile words under specific circumstances based on levenshtein distance, the length of the words and their frequency.
-   * When a query contains an unknown or infrequent word. To deal with this kind of problem, we might want to use word embeddings. Let's say the search engine is used so far by a population of a specific country in which the 'pepsi' brand does not exist. Then, let's say pepsi has just been authorized to sell products in this country. At the beginning, the algorithm would treat 'pepsi' as an item with no information which is a shame. Particlularly if the word 'coca-cola' is frequent enough to let the algorithm make good prediction. Indeed we know as people that pepsi and coca-cola are different words used to represent the same kind of product. Moreover, this representation is accessible through pre-trained word embeddings. It means that, one might imagine a more powerful similarity between two queries that would take into account the embeddings of the queries's words. As a consequence, 'bottle of pepsi' and 'bottle of coca-cola' would be more similar than 'bottle of pepsi' and 'bottle of water' even though if 'pepsi' would be an unknown word.
+    * When entities do not have permanent orthography. Which is generally the case for foreign words used to represent people or places. To deal with this problem, we can imagine a way to reconcile words under specific circumstances based on levenshtein distance, the length of the words and their frequency.
+    * When a query contains an unknown or infrequent word. To deal with this kind of problem, we might want to use word embeddings. Let's say the search engine is used so far by a population of a specific country in which the 'pepsi' brand does not exist. Then, let's say pepsi has just been authorized to sell products in this country. At the beginning, the algorithm would treat 'pepsi' as an item with no information which is a shame. Particlularly if the word 'coca-cola' is frequent enough to let the algorithm make good prediction. Indeed we know as people that pepsi and coca-cola are different words used to represent the same kind of product. Moreover, this representation is accessible through pre-trained word embeddings. It means that, one might imagine a more powerful similarity between two queries that would take into account the embeddings of the queries's words. As a consequence, 'bottle of pepsi' and 'bottle of coca-cola' would be more similar than 'bottle of pepsi' and 'bottle of water' even though if 'pepsi' would be an unknown word.
  3. The algorithm considers a pair of the same word as similar, which is what we want in most cases. However, we know that sometimes the same word can have different meanings given the context. For example, the word 'bat' in the two following queries : 'chicago yankees bat' ; 'bat seen in chicago'. One way to adress this sort of problem would be to use transformers. As we know, transformer is a deep learning model that transform successively, each word embedding of a sentence, according to the embeddings of the surrounded words. In other words, transformer sort of update initial word embeddings given the context (and the position of the word) which is exactly what we need in order to adress the word disambiguation problem.
 
