@@ -10,11 +10,11 @@ The objective is to correctly predict the category to which a query belongs. A q
 #### **Important files** 
 
 Important files of the repository :
- * *my_predictions_for_testset.txt* : the predictions I got running my model on the *testset.txt* dataset
- * *myfun.py* : the functions I used for my model
- * *train.py* : the script to run the training part of the model
- * *evaluate.py* : the script to run the evaluation of the model according to hyperparameter value
- * *predict.py* : the script to run the predictions on whatever file of the same format as the training set
+ * [my_predictions_for_testset.txt](https://github.com/hansglick/adth-tt/blob/master/my_predictions_for_testset.txt) : the predictions I got running my model on the *testset.txt* dataset
+ * [myfun.py](https://github.com/hansglick/adth-tt/blob/master/myfun.py) : the functions I used for my model
+ * [train.py](https://github.com/hansglick/adth-tt/blob/master/train.py) : the script to run the training part of the model
+ * [evaluate.py](https://github.com/hansglick/adth-tt/blob/master/evaluate.py) : the script to run the evaluation of the model according to hyperparameter value
+ * [predict.py](https://github.com/hansglick/adth-tt/blob/master/predict.py) : the script to run the predictions on whatever file of the same format as the training set
 
 ***
 
