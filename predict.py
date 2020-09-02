@@ -55,7 +55,7 @@ if __name__ == "__main__":
 	parser = argparse.ArgumentParser(description='test arguments')
 	parser.add_argument("-i", "--input_file", help="input filename", required=True)
 	parser.add_argument("-o", "--output_file", help="output filename", required=True)
-	parser.add_argument("-hyper", "--hyperparameter", help="hyperparameter 0.85 is suggested",type=float,default=0.85)
+	parser.add_argument("-hyper", "--hyperparameter", help="hyperparameter 0.95 is suggested",type=float,default=0.95)
 	args = parser.parse_args()
 	Run_Predictions_For_File(args)
 
