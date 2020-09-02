@@ -1,5 +1,7 @@
 import argparse
 from myfun import *
+import re
+import string
 
 
 # command line example : python predict -i testexample.txt -o results.txt -hyper 0.85
@@ -25,6 +27,8 @@ Overallp =  DotProductFromDic(OverallDisDic)
 print("Building 'words'discriminant' power dictionnary ...")
 PowerDicDis = GetPowerDicDis(Overallp,dic_of_words,0.01)
 
+print("Build the translator to remove punctuations ...")
+translator = str.maketrans('', '', string.punctuation)
 
 def Run_Predictions_For_File(args):
     
@@ -32,7 +36,8 @@ def Run_Predictions_For_File(args):
         with open(args.output_file, "w") as fhandle:
             for idrow,l in enumerate(file):
                 print("\rPredicted requests : ",idrow+1,end="")
-                request = l.rstrip("\n").lower()
+                request = l.rstrip("\n").lower().translate(translator)
+                request = re.sub(' +', ' ', request)
                 predicted_category =  Predict_One_String_Request(request,
                                                                  dic_of_words,WordToRequest,PowerDicDis,dic_of_requests,
                                                                  Overallp,DefaultCategory,
